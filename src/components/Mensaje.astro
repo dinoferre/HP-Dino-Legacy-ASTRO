@@ -1,0 +1,13 @@
+---
+export interface Props {
+    nombre: string;
+}
+
+const {nombre} = Astro.props;
+---
+
+<h1>{nombre}</h1>
+
+<!-- El código define una interfaz Props con una propiedad nombre y muestra el valor de la propiedad 
+nombre utilizando la variable desestructurada. 
+Autor: Dino Ferré -->

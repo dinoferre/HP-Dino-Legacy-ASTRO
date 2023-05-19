@@ -1,0 +1,28 @@
+---
+import PostPreview from "../components/PostPreview.astro";
+import Title from "../components/Title.astro";
+import LayoutPost from "../layouts/LayoutPost.astro";
+
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<LayoutPost title="Blog">
+  <section>
+    <Title title="Últimas noticias" />
+    {posts.map((post) => <PostPreview post={post} />)}
+  </section>
+</LayoutPost>
+
+<style>
+  section {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<!-- El código construye una página de blog utilizando los archivos Markdown
+encontrados en la carpeta "./posts/*.md". Los componentes LayoutPost, Title y
+PostPreview se utilizan para estructurar y mostrar las últimas noticias en la
+página del blog. 
+Autor: Dino Ferré -->

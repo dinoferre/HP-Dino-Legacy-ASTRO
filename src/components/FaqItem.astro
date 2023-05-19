@@ -1,0 +1,30 @@
+---
+import type { faq } from "../types/types";
+import Separator from "./Separator.astro";
+
+export interface Props {
+  item: faq;
+}
+
+const { item } = Astro.props;
+---
+
+<div class="faqItem">
+  <h3>{item.question}</h3>
+  <p>{item.response}</p>
+  <Separator />
+</div>
+
+<style>
+  h3 {
+    font-size: 34px;
+    color: rgb(223, 221, 186);
+  }
+  .faqItem {
+    text-align: center;
+  }
+</style>
+
+<!-- El código muestra la pregunta y respuesta de un ítem de FAQ, utilizando las propiedades 
+question y response del objeto item. 
+Autor: Dino Ferré -->

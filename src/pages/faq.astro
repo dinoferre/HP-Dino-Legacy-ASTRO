@@ -1,0 +1,26 @@
+---
+import LayoutPost from "../layouts/LayoutPost.astro";
+import faq from "../data/faqData";
+import Title from "../components/Title.astro";
+import FaqItem from "../components/FaqItem.astro";
+---
+
+<LayoutPost title="FAQ">
+  <section>
+    <Title title="Preguntas Frecuentes" />
+
+    {faq.map((f) => <FaqItem item={f} />)}
+  </section>
+</LayoutPost>
+
+<style>
+  section {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<!-- El código construye una página de preguntas frecuentes utilizando el arreglo
+faq para mostrar una lista de preguntas y respuestas. 
+Autor: Dino Ferré -->
